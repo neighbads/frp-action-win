@@ -44,7 +44,7 @@ jobs:
           frp_server_addr: ${{ env.FRP_SERVER_ADDR }}
           frp_server_port: ${{ env.FRP_SERVER_PORT }}
           frp_token: ${{ env.FRP_TOKEN }}
-          remote_port: ${{ env.REMOTE_PORT }}
+          remote_port: ${{ env.FRP_REMOTE_PORT }}
 ```
 
 ### 4. Run the github Action
