@@ -22,6 +22,7 @@ transport.tls.force = true
 - FRP_SERVER_ADDR
 - FRP_SERVER_PORT
 - FRP_TOKEN
+- FRP_REMOTE_PORT
 
 ### 3. Use the github Action
 
@@ -39,12 +40,12 @@ jobs:
           submodules: recursive
 
       - name: Debug github Action with frp tunnel
-        uses: neighbads/frp-action-win@main
+        uses: neighbads/frp-action-win@v1.0
         with:
-          frp_server_addr: ${{ env.FRP_SERVER_ADDR }}
-          frp_server_port: ${{ env.FRP_SERVER_PORT }}
-          frp_token: ${{ env.FRP_TOKEN }}
-          remote_port: ${{ env.FRP_REMOTE_PORT }}
+          frp_server_addr: ${{ secrets.FRP_SERVER_ADDR }}
+          frp_server_port: ${{ secrets.FRP_SERVER_PORT }}
+          frp_token: ${{ secrets.FRP_TOKEN }}
+          remote_port: ${{ secrets.FRP_REMOTE_PORT }}
 ```
 
 ### 4. Run the github Action
